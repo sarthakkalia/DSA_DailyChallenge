@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Hashing_Q1 {
+public class Count_Frequency {
     public static void using_arr(int[] arr,int[] num){
         for(int i=0;i<num.length;i++){
             int count=0;
