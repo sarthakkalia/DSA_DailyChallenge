@@ -1,5 +1,5 @@
-public class FirstLast_occurance_sortedArray {
-    static int first_occurance(int[] arr, int target){
+public class FirstLast_occurrence_sortedArray {
+    static int first_occurrence(int[] arr, int target){
         int low=0;
         int high=arr.length-1;
         int mid;
@@ -15,7 +15,7 @@ public class FirstLast_occurance_sortedArray {
         }
         return ans;
     }
-    static int last_occurance(int[] arr, int target){
+    static int last_occurrence(int[] arr, int target){
         int low=0;
         int high=arr.length-1;
         int mid;
@@ -31,11 +31,17 @@ public class FirstLast_occurance_sortedArray {
         }
         return ans-1;
     }
+    static int[] first_last_occurrence(int[] arr, int target) {
+        int lb = first_occurrence(arr, target);
+        if (lb == arr.length || arr[lb] != target) return new int[]{-1, -1};
+        return new int[]{lb, last_occurrence(arr, target)};
+    }
 
     public static void main(String[] args) {
         int[] arr= {3,4,13,13,13,20,40};
         int target=13;
-        System.out.println("First Occurance: "+first_occurance(arr, target));
-        System.out.println("Last Occurance: "+last_occurance(arr, target));
+        int[] result = first_last_occurrence(arr, target);
+        System.out.println("First Occurrence: " + result[0]);
+        System.out.println("Last Occurrence: " + result[1]);
     }
 }
