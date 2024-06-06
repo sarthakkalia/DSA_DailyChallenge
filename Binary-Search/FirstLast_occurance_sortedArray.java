@@ -1,4 +1,4 @@
-public class FirstLast_occurrence_sortedArray {
+public class FirstLast_occurance_sortedArray {
     static int first_occurrence(int[] arr, int target){
         int low=0;
         int high=arr.length-1;
